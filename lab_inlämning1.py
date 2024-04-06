@@ -51,13 +51,13 @@ def hangman():
             print("Du har redan gissat den bokstaven.")
             continue
 
-        guessed_letters.append(guess)
+        guessed_letters.append(guess) # lägg till bokstaven i tidigare gissade bokstäver
 
-        if guess not in word:
+        if guess not in word: # om bokstaven inte finns i ordet.
             print("Den bokstaven finns inte i ordet vi söker tyvärr.")
             attempts -= 1 # här räknas försöken ned, om bokstaven inte finns med i ordet.
         else:
-            print("Yippie! - jackpot!")
+            print("Yippie! - jackpot!") # om bokstaven finns i ordet 
 
         if is_word_guessed(word, guessed_letters): # så länge antal försök är större än 0, kolla om det lyckats gissa rätt ord via funktion.
             print("\nGrattis! du lyckades gissa rätt ord! - ordet var:", word)
