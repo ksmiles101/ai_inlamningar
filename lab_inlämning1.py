@@ -1,6 +1,6 @@
 
 
-# hang man med färger
+# Hänga gubben med färger
 import random
 
 
@@ -41,7 +41,7 @@ def hangman():
     while attempts > 0:
         print("\n", display_word(word, guessed_letters)) # använder funktionen för att visa ordet.
         print("\n Antal försök kvar:", attempts) # 
-        guess = input("Gissa en bokstav som finns i ordet: ").lower() # input som tar emot gissning, och formaterar till gemener.
+        guess = input("\nGissa en bokstav som finns i ordet: ").lower() # input som tar emot gissning, och formaterar till gemener.
 
         if len(guess) != 1 or not guess.isalpha(): # kontroll om input är längd 1
             print("Du kan bara gissa en bokstav i taget.")
