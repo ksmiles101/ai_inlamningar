@@ -39,7 +39,7 @@ def hangman():
     print("Ordet vi söker är en färg, det är", len(word), "bokstäver långt.")  # Utskrift av antalet bokstäver i ordet
 
     while attempts > 0:
-        print("\n:", display_word(word, guessed_letters)) # använder funktionen för att visa ordet.
+        print("\n", display_word(word, guessed_letters)) # använder funktionen för att visa ordet.
         print("\n Antal försök kvar:", attempts) # 
         guess = input("Gissa en bokstav som finns i ordet: ").lower() # input som tar emot gissning, och formaterar till gemener.
 
@@ -54,17 +54,17 @@ def hangman():
         guessed_letters.append(guess)
 
         if guess not in word:
-            print("Den bokstaven finns inte tyvärr.")
+            print("Den bokstaven finns inte i ordet vi söker tyvärr.")
             attempts -= 1 # här räknas försöken ned, om bokstaven inte finns med i ordet.
         else:
             print("Yippie! - jackpot!")
 
         if is_word_guessed(word, guessed_letters): # så länge antal försök är större än 0, kolla om det lyckats gissa rätt ord via funktion.
-            print("\nGrattis! du lyckades gissa rätt ord!", word)
+            print("\nGrattis! du lyckades gissa rätt ord! - ordet var:", word)
             break
 
     if attempts == 0: # om försök = 0, game over!
         print("\nSorry mate, spelet är över! - ordet vi sökte var:", word)
-
+# 
 if __name__ == "__main__":
     hangman()
